@@ -1,70 +1,64 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class EventPractice extends Component {
-    state = {
-        message: "",
+const EventPractice = () => {
+    const [form, setForm] = useState({
         username: "",
+        message: "",
+    });
+
+    const { username, message } = form;
+
+    const onChange = (e) => {
+        const nextForm = {
+            ...form, //  기존 폼 내용 여기로 복사
+            [e.target.name]: e.target.value, //  원하는 값 덮어쓰기
+        };
+        setForm(nextForm);
     };
 
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(e) {
-        this.setState({
-            //  [] 안에 있는 name값이 key값으로 적용
-            [e.target.name]: e.target.value,
-        });
-    }
-
-    handleClick() {
-        alert(this.state.username + " : " + this.state.message);
-        this.setState({
-            message: "",
+    const onClick = () => {
+        alert(username + " : " + message);
+        setForm({
             username: "",
+            message: "",
         });
-    }
+    };
 
-    //  keypress event
-    handleKeyPress = (e) => {
+    const onKeyPress = (e) => {
         if (e.key === "Enter") {
-            this.handleClick();
+            onClick();
         }
     };
 
-    render() {
-        return (
-            <div>
-                <h1>이벤트 연습</h1>
+    return (
+        <div>
+            <h1>이벤트 연습</h1>
 
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="사용자명"
-                    value={this.state.username}
-                    onChange={this.handleChange}
-                />
+            <input
+                type="text"
+                name="username"
+                placeholder="사용자명"
+                value={username}
+                onChange={onChange}
+            />
 
-                <input
-                    type="text"
-                    name="message"
-                    placeholder="아무거나 입력해 보세요"
-                    value={this.state.message}
-                    onChange={this.handleChange}
-                    onKeyPress={this.handleKeyPress}
-                />
+            <input
+                type="text"
+                name="message"
+                placeholder="아무거나 입력해 보세요"
+                value={message}
+                onChange={onChange}
+                onKeyPress={onKeyPress}
+            />
 
-                <button
-                    //  버튼을 누를 때 message 공백으로 설정
-                    onClick={this.handleClick}
-                >
-                    확인
-                </button>
-            </div>
-        );
-    }
-}
+            <button
+                //  버튼을 누를 때 message 공백으로 설정
+                onClick={onClick}
+            >
+                확인
+            </button>
+        </div>
+    );
+};
 
 export default EventPractice;

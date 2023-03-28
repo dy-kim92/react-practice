@@ -4,6 +4,7 @@ import { Component } from "react";
 import MyComponent from "./MyComponent";
 import Counter from "./Counter";
 import Say from "./Say";
+import EventPractice from "./EventPractice";
 
 // function App() {
 //   const name = "리액트";
@@ -35,15 +36,17 @@ import Say from "./Say";
 
 //  컴포넌트 불러오기
 const App = () => {
-  return (
-    // <MyComponent name="React" favoriteNumber={1}>
-    //   리액트
-    // </MyComponent>
+    return (
+        // <MyComponent name="React" favoriteNumber={1}>
+        //   리액트
+        // </MyComponent>
 
-    // <Counter />
+        // <Counter />
 
-    <Say />
-  );
+        // <Say />
+
+        <EventPractice />
+    );
 };
 
 export default App;

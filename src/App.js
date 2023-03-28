@@ -6,6 +6,7 @@ import Counter from "./Counter";
 import Say from "./Say";
 import EventPractice from "./EventPractice";
 import ValidationSample from "./ValidationSample";
+import ScrollBox from "./ScrollBox";
 
 // function App() {
 //   const name = "리액트";
@@ -36,20 +37,35 @@ import ValidationSample from "./ValidationSample";
 // }
 
 //  컴포넌트 불러오기
-const App = () => {
-    return (
-        // <MyComponent name="React" favoriteNumber={1}>
-        //   리액트
-        // </MyComponent>
+// const App = () => {
+//     return (
+//         // <MyComponent name="React" favoriteNumber={1}>
+//         //   리액트
+//         // </MyComponent>
 
-        // <Counter />
+//         // <Counter />
 
-        // <Say />
+//         // <Say />
 
-        // <EventPractice />
+//         // <EventPractice />
 
-        <ValidationSample />
-    );
-};
+//         // <ValidationSample />
+
+//         <ScrollBox />
+//     );
+// };
+
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+                <button onClick={() => this.scrollBox.scrollToBottom()}>
+                    맨 밑으로
+                </button>
+            </div>
+        );
+    }
+}
 
 export default App;

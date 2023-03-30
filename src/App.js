@@ -14,6 +14,7 @@ import Counter2 from "./Counter2";
 import Info from "./Info";
 import CounterReducer from "./CounterReducer";
 import InfoReducer from "./InfoReducer";
+import Average from "./Average";
 
 // function App() {
 //   const name = "리액트";
@@ -126,7 +127,8 @@ const App = () => {
     // );
 
     // return <CounterReducer />;
-    return <InfoReducer />;
+    // return <InfoReducer />;
+    return <Average />;
 };
 
 export default App;

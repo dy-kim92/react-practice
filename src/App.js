@@ -13,6 +13,7 @@ import ErrorBoundary from "./ErrorBoundary";
 import Counter2 from "./Counter2";
 import Info from "./Info";
 import CounterReducer from "./CounterReducer";
+import InfoReducer from "./InfoReducer";
 
 // function App() {
 //   const name = "리액트";
@@ -124,7 +125,8 @@ const App = () => {
     //     </div>
     // );
 
-    return <CounterReducer />;
+    // return <CounterReducer />;
+    return <InfoReducer />;
 };
 
 export default App;

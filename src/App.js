@@ -12,6 +12,7 @@ import LifeCycleSample from "./LifeCycleSample";
 import ErrorBoundary from "./ErrorBoundary";
 import Counter2 from "./Counter2";
 import Info from "./Info";
+import CounterReducer from "./CounterReducer";
 
 // function App() {
 //   const name = "리액트";
@@ -108,20 +109,22 @@ const App = () => {
     // return <Counter2 />;
     // return <Info />;
 
-    const [visible, setVisible] = useState(false);
-    return (
-        <div>
-            <button
-                onClick={() => {
-                    setVisible(!visible);
-                }}
-            >
-                {visible ? "숨기기" : "보이기"}
-            </button>
-            <hr />
-            {visible && <Info />}
-        </div>
-    );
+    // const [visible, setVisible] = useState(false);
+    // return (
+    //     <div>
+    //         <button
+    //             onClick={() => {
+    //                 setVisible(!visible);
+    //             }}
+    //         >
+    //             {visible ? "숨기기" : "보이기"}
+    //         </button>
+    //         <hr />
+    //         {visible && <Info />}
+    //     </div>
+    // );
+
+    return <CounterReducer />;
 };
 
 export default App;
